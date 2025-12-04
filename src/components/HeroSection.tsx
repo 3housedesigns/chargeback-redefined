@@ -8,6 +8,15 @@ const HeroSection = () => {
       
       <div className="container relative z-10 px-4 py-20 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
+
+          <div className="flex justify-center mb-6">
+            <img 
+              src="/Sentinel.png" 
+              alt="Sentinel Logo" 
+              className="mx-auto w-40 h-auto"
+            />
+          </div>
+          
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-fade-up">
             <span className="text-sm font-medium text-primary">No Recovery, No Fee</span>
           </div>
