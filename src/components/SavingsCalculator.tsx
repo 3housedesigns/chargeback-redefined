@@ -5,7 +5,7 @@ const SavingsCalculator = () => {
   const [displayedSavings, setDisplayedSavings] = useState(0);
   const [displayedFee, setDisplayedFee] = useState(0);
   const amount = chargebackAmount[0];
-  const recoveryRate = 0.70; // 70% average recovery rate
+  const recoveryRate = 0.80; // 80% average recovery rate
   const feePercentage = 0.15; // 15% fee
 
   const potentialRecovery = amount * recoveryRate;
@@ -78,7 +78,7 @@ const SavingsCalculator = () => {
             <p className="stat-number text-gradient-primary">
               {formatCompact(potentialRecovery)}
             </p>
-            <p className="text-xs text-muted-foreground mt-1">~70% recovery rate</p>
+            <p className="text-xs text-muted-foreground mt-1">~80% recovery rate</p>
           </div>
           
           <div className="text-center p-6 rounded-xl bg-muted/50">
@@ -100,7 +100,7 @@ const SavingsCalculator = () => {
           </div>
         </div>
 
-        <p className="text-center text-xs text-muted-foreground">* Estimates based on average recovery rates. Actual results and fees may vary.</p>
+        <p className="text-center text-xs text-muted-foreground">* Estimates based on a conservative recovery rate. Actual results and fees may vary.</p>
       </div>
     </div>;
 };
