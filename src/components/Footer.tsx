@@ -17,13 +17,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <nav className="flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">About</a>
-            <a href="#" className="hover:text-foreground transition-colors">Services</a>
-            <a href="#" className="hover:text-foreground transition-colors">Case Studies</a>
-            <a href="#" className="hover:text-foreground transition-colors">Contact</a>
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-          </nav>
+    
           
           <p className="text-sm text-muted-foreground">
             © 2025 Sentinel CS. All rights reserved.
