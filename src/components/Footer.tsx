@@ -7,7 +7,7 @@ const Footer = () => {
               < img
                 src="/Eye.png"
                 alt="Eye logo"
-                className="w-8 h-6 object contain"
+                className="w-8 h-6 object-contain"
               />
             </div>
             <div className="flex flex-col leading-tight">
