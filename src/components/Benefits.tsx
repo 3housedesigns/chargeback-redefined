@@ -39,7 +39,7 @@ const Benefits = () => {
       <div className="container px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Why Choose <span className="text-gradient-primary">ChargeGuard</span>
+            Why Choose <span className="text-gradient-primary">Sentinel</span>
           </h2>
           <p className="text-muted-foreground text-lg">
             The trusted partner for operational chargeback recovery

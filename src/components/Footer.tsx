@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
               <Shield className="w-5 h-5 text-primary" />
             </div>
-            <span className="text-xl font-bold">ChargeGuard</span>
+            <span className="text-xl font-bold">Sentinel</span>
           </div>
           
           <nav className="flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
@@ -21,7 +21,7 @@ const Footer = () => {
           </nav>
           
           <p className="text-sm text-muted-foreground">
-            © 2024 ChargeGuard. All rights reserved.
+            © 2024 Sentinel. All rights reserved.
           </p>
         </div>
       </div>

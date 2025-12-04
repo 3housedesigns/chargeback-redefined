@@ -30,9 +30,9 @@ const CTASection = () => {
               <Phone className="w-4 h-4 text-primary" />
               1-800-RECOVER
             </a>
-            <a href="mailto:recover@chargeguard.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
+            <a href="mailto:recover@sentinel.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
               <Mail className="w-4 h-4 text-primary" />
-              recover@chargeguard.com
+              recover@sentinel.com
             </a>
           </div>
         </div>
