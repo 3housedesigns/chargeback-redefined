@@ -19,17 +19,17 @@ const benefits = [
   {
     icon: Users,
     title: "Retailer Expertise",
-    description: "Deep relationships with Walmart, Amazon, Target, Costco, and more.",
+    description: "Deep knowledge in customer portals with Walmart, Amazon, Target, Best Buy, and several others.",
   },
   {
     icon: Lock,
     title: "Full Transparency",
-    description: "Receive real results of payback once they occur.",
+    description: "Receive weekly results of recuperated funds and denials for accurate bookkeeping.",
   },
   {
     icon: BarChart3,
     title: "Data-Driven Insights",
-    description: "Actionable analytics to prevent future chargebacks and protect margins.",
+    description: "Functional analytics to understand recurring instances and drive continuous improvement.",
   },
 ];
 
