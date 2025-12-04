@@ -24,7 +24,7 @@ const HeroSection = () => {
         }}>We process and recover funds from major retailers on your behalf. Our personalized and success-based model means you only pay when we deliver results.</p>
           
          
-          <div className="mt-16 grid grid-cols-3 gap-8 max-w-xl mx-auto animate-fade-up" style={{
+          <div className="mt-16 grid grid-cols-4 gap-8 max-w-xl mx-auto animate-fade-up" style={{
           animationDelay: '0.4s'
         }}>
             <div className="text-center">
