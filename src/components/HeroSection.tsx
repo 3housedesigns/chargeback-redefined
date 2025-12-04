@@ -28,8 +28,10 @@ const HeroSection = () => {
           animationDelay: '0.3s'
         }}>
             <Button variant="hero" size="xl">
-              Get Free Assessment
+               <a href="mailto:compliance@sentinelcbs.com">
+                  Get Free Assessment
               <ArrowRight className="w-5 h-5" />
+                </a>
             </Button>
             <Button variant="hero-outline" size="xl">
               See How It Works
