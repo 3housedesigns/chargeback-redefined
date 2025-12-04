@@ -24,7 +24,7 @@ const HeroSection = () => {
         }}>We process and recover funds from major retailers on your behalf. Our personalized and success-based model means you only pay when we deliver results.</p>
           
          
-          <div className="mt-16 grid grid-cols-4 gap-8 max-w-3xl mx-auto animate-fade-up" style={{
+          <div className="mt-16 grid grid-cols-4 gap-10 max-w-3xl mx-auto animate-fade-up" style={{
           animationDelay: '0.4s'
         }}>
             <div className="text-center">
@@ -32,7 +32,7 @@ const HeroSection = () => {
               <p className="text-sm text-muted-foreground mt-1">Processed</p>
             </div>
             <div className="text-center">
-              <p className="stat-number text-foreground text x1 whitespace-nowrap pr-2">85-90%</p>
+              <p className="stat-number text-foreground text 2x1 whitespace-nowrap pr-2">85-90%</p>
               <p className="text-sm text-muted-foreground mt-1">Avg. Success Rate</p>
             </div>
             <div className="text-center">
