@@ -41,7 +41,7 @@ const HowItWorks = () => {
                 
                 <span className="text-xs font-bold text-primary tracking-wider">STEP {item.step}</span>
                 <h3 className="text-xl font-bold mt-2 mb-3">{item.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed text-center">{item.description}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed text-left">{item.description}</p>
               </div>
             </div>)}
         </div>
