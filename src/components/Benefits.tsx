@@ -24,7 +24,7 @@ const benefits = [
   {
     icon: Lock,
     title: "Full Transparency",
-    description: "Real-time dashboard access to track every dispute and recovery.",
+    description: "Receive real results of payback once they occur.",
   },
   {
     icon: BarChart3,
