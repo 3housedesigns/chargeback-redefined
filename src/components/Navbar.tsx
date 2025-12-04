@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +8,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-              <Shield className="w-5 h-5 text-primary" />
+              <img
+                src=*/Eye.png"
+                alt="Eye logo"
+                className="w-8 h-6 object-contain" 
+              />
             </div>
             <div className="flex flex-col leading-tight">
               <span className="font-bold tracking-wide text-3xl text-destructive">SENTINEL</span>
@@ -34,9 +38,11 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden md:block">
+            <a href="mailto:compliance@sentinelcbs.com">
             <Button variant="default" size="default">
               Get Started
             </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -60,9 +66,11 @@ const Navbar = () => {
               <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Contact
               </a>
+               <a href="mailto:compliance@sentinelcbs.com">
               <Button variant="default" size="default" className="w-full mt-2">
                 Get Started
               </Button>
+              </a>
             </div>
           </nav>}
       </div>
