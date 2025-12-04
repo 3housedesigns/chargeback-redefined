@@ -13,7 +13,11 @@ const Navbar = () => {
             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
               <Shield className="w-5 h-5 text-primary" />
             </div>
-            <span className="text-xl font-bold">Sentinel</span>
+            <div className="flex flex-col leading-tight">
+              <span className="text-2xl font-bold tracking-wide">SENTINEL</span>
+              <span className="text-xs text-muted-foreground font-normal">chargeback</span>
+              <span className="text-xs text-muted-foreground font-normal -mt-0.5">solutions</span>
+            </div>
           </a>
 
           {/* Desktop Navigation */}
