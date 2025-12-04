@@ -1,4 +1,5 @@
- 
+Import Image from "next/image"; 
+
 const Footer = () => {
   return <footer className="py-12 border-t border-border/50">
       <div className="container px-4">
@@ -8,7 +9,9 @@ const Footer = () => {
               < Image
                 src="/Eye.png"
                 alt="Eye logo"
-                className="w-8 h-8 object-contain"
+                width={32}
+                height={32}
+                className="object-contain"
               />
             </div>
             <div className="flex flex-col leading-tight">
