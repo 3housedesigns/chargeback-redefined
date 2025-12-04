@@ -29,7 +29,7 @@ const HeroSection = () => {
             <Button variant="hero" size="xl">
                <a href="mailto:compliance@sentinelcbs.com">
                   Get Free Assessment
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4" />
                 </a>
             </Button>
             <Button variant="hero-outline" size="xl">
