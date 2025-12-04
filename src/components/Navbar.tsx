@@ -1,12 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Menu, X } from "lucide-react";
 import { useState } from "react";
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="container px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="/" className="flex items-center gap-2">
@@ -14,9 +11,9 @@ const Navbar = () => {
               <Shield className="w-5 h-5 text-primary" />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-2xl font-bold tracking-wide">SENTINEL</span>
-              <span className="text-xs text-muted-foreground font-normal">chargeback</span>
-              <span className="text-xs text-muted-foreground font-normal -mt-0.5">solutions</span>
+              <span className="font-bold tracking-wide text-3xl">SENTINEL</span>
+              <span className="text-xs text-muted-foreground font-normal text-center">CHARGEBACK SOLUTIONS </span>
+              
             </div>
           </a>
 
@@ -43,17 +40,13 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}
-          >
+          <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <nav className="md:hidden py-4 border-t border-border/50">
+        {isOpen && <nav className="md:hidden py-4 border-t border-border/50">
             <div className="flex flex-col gap-4">
               <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 How It Works
@@ -71,11 +64,8 @@ const Navbar = () => {
                 Get Started
               </Button>
             </div>
-          </nav>
-        )}
+          </nav>}
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Navbar;

@@ -1,8 +1,6 @@
 import { Shield } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="py-12 border-t border-border/50">
+  return <footer className="py-12 border-t border-border/50">
       <div className="container px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
@@ -10,9 +8,9 @@ const Footer = () => {
               <Shield className="w-5 h-5 text-primary" />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-2xl font-bold tracking-wide">SENTINEL</span>
-              <span className="text-xs text-muted-foreground font-normal">chargeback</span>
-              <span className="text-xs text-muted-foreground font-normal -mt-0.5">solutions</span>
+              <span className="font-bold tracking-wide text-3xl">SENTINEL</span>
+              <span className="text-xs text-muted-foreground font-normal">CHARGEBACK SOLUTIONS</span>
+              
             </div>
           </div>
           
@@ -29,8 +27,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
