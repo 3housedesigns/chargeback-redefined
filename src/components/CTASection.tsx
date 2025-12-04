@@ -17,19 +17,14 @@ const CTASection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <a href="mailto:compliance@sentinelcbs.com">
             <Button variant="hero" size="xl">
-              Schedule Free Consultation
+              Contact Us
               <ArrowRight className="w-5 h-5" />
             </Button>
+           </a>
           </div>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-muted-foreground">
-            
-            <a href="mailto:recover@sentinel.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
-              <Mail className="w-4 h-4 text-primary" />
-              recover@sentinel.com
-            </a>
-          </div>
         </div>
       </div>
     </section>;
