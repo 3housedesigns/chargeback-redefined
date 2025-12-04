@@ -11,8 +11,8 @@ const Navbar = () => {
               <Shield className="w-5 h-5 text-primary" />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="font-bold tracking-wide text-3xl">SENTINEL</span>
-              <span className="text-xs text-muted-foreground font-normal text-center">CHARGEBACK SOLUTIONS </span>
+              <span className="font-bold tracking-wide text-3xl text-destructive">SENTINEL</span>
+              <span className="text-xs font-normal text-center text-secondary-foreground">CHARGEBACK SOLUTIONS </span>
               
             </div>
           </a>

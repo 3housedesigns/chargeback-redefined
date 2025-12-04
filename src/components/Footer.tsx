@@ -8,8 +8,8 @@ const Footer = () => {
               <Shield className="w-5 h-5 text-primary" />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="font-bold tracking-wide text-3xl">SENTINEL</span>
-              <span className="text-xs text-muted-foreground font-normal">CHARGEBACK SOLUTIONS</span>
+              <span className="font-bold tracking-wide text-3xl text-destructive">SENTINEL</span>
+              <span className="text-xs font-normal text-secondary-foreground">CHARGEBACK SOLUTIONS</span>
               
             </div>
           </div>
@@ -23,7 +23,7 @@ const Footer = () => {
           </nav>
           
           <p className="text-sm text-muted-foreground">
-            © 2024 Sentinel. All rights reserved.
+            © 2025 Sentinel. All rights reserved.
           </p>
         </div>
       </div>

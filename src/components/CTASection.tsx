@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail } from "lucide-react";
-
 const CTASection = () => {
-  return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
+  return <section className="py-24 md:py-32 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 hero-glow opacity-50" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl" />
@@ -26,10 +24,7 @@ const CTASection = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-muted-foreground">
-            <a href="tel:1-800-RECOVER" className="flex items-center gap-2 hover:text-foreground transition-colors">
-              <Phone className="w-4 h-4 text-primary" />
-              1-800-RECOVER
-            </a>
+            
             <a href="mailto:recover@sentinel.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
               <Mail className="w-4 h-4 text-primary" />
               recover@sentinel.com
@@ -37,8 +32,6 @@ const CTASection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CTASection;
