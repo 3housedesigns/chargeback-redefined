@@ -23,34 +23,25 @@ const HeroSection = () => {
           animationDelay: '0.2s'
         }}>We process and recover funds from major retailers on your behalf. Our personalized and success-based model means you only pay when we deliver results.</p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{
-          animationDelay: '0.3s'
-        }}>
-            <Button variant="hero" size="xl">
-               <a href="mailto:compliance@sentinelcbs.com">
-                  Get Free Assessment
-              <ArrowRight className="w-4 h-4" />
-                </a>
-            </Button>
-            <Button variant="hero-outline" size="xl">
-              See How It Works
-            </Button>
-          </div>
-          
+         
           <div className="mt-16 grid grid-cols-3 gap-8 max-w-xl mx-auto animate-fade-up" style={{
           animationDelay: '0.4s'
         }}>
             <div className="text-center">
-              <p className="stat-number text-foreground">$47M+</p>
-              <p className="text-sm text-muted-foreground mt-1">Recovered</p>
+              <p className="stat-number text-foreground">$4M+</p>
+              <p className="text-sm text-muted-foreground mt-1">Processed</p>
             </div>
             <div className="text-center">
-              <p className="stat-number text-foreground">94%</p>
-              <p className="text-sm text-muted-foreground mt-1">Success Rate</p>
+              <p className="stat-number text-foreground">85-90%</p>
+              <p className="text-sm text-muted-foreground mt-1">Avg. Success Rate</p>
             </div>
             <div className="text-center">
-              <p className="stat-number text-foreground">200+</p>
-              <p className="text-sm text-muted-foreground mt-1">Clients</p>
+              <p className="stat-number text-foreground">5,000+</p>
+              <p className="text-sm text-muted-foreground mt-1">Claims Managed</p>
+            </div>
+              <div className="text-center">
+              <p className="stat-number text-foreground">12+</p>
+              <p className="text-sm text-muted-foreground mt-1">Years of Experience</p>
             </div>
           </div>
         </div>
