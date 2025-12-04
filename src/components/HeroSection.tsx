@@ -32,7 +32,7 @@ const HeroSection = () => {
               <p className="text-sm text-muted-foreground mt-1">Processed</p>
             </div>
             <div className="text-center">
-              <p className="stat-number text-foreground text 2x1 whitespace-nowrap">85-90%</p>
+              <p className="stat-number text-foreground text x1 whitespace-nowrap pr-2">85-90%</p>
               <p className="text-sm text-muted-foreground mt-1">Avg. Success Rate</p>
             </div>
             <div className="text-center">
