@@ -8,7 +8,7 @@ const steps = [{
   icon: Scale,
   step: "02",
   title: "We Fight Your Disputes",
-  description: "Leveraging deep retailer relationships and proven processes, we negotiate and dispute illegitimate chargebacks on your behalf."
+  description: "This is a tailored process, where we work in collaboration with your internal teams to gather supporting documentation to negotiate and dispute illegitimate chargebacks on your behalf."
 }, {
   icon: Banknote,
   step: "03",
