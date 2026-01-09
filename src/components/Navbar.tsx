@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
@@ -38,11 +40,11 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden md:block">
-            <a href="mailto:compliance@sentinelcbs.com">
-            <Button variant="default" size="default">
-              Get Started
-            </Button>
-            </a>
+            <Link to="/contact">
+              <Button variant="default" size="default">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -66,11 +68,11 @@ const Navbar = () => {
               <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Contact
               </a>
-               <a href="mailto:compliance@sentinelcbs.com">
-              <Button variant="default" size="default" className="w-full mt-2">
-                Get Started
-              </Button>
-              </a>
+              <Link to="/contact">
+                <Button variant="default" size="default" className="w-full mt-2">
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </nav>}
       </div>

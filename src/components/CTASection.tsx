@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
 const CTASection = () => {
   return <section className="py-24 md:py-32 relative overflow-hidden">
       {/* Background elements */}
@@ -17,12 +19,12 @@ const CTASection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <a href="mailto:compliance@sentinelcbs.com">
-            <Button variant="hero" size="xl">
-              Contact Us
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-           </a>
+            <Link to="/contact">
+              <Button variant="hero" size="xl">
+                Contact Us
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </Link>
           </div>
           
         </div>
