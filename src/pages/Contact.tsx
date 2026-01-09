@@ -154,11 +154,10 @@ const Contact = () => {
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-            className="space-y-6"
-          >    
-  <input type="hidden" name="form-name" value="contact" />
-  <input type="hidden" name="bot-field" />
+              className="space-y-6"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="bot-field" />
             <div className="space-y-2">
               <Label htmlFor="name">
                 Name <span className="text-primary">*</span>
@@ -233,15 +232,9 @@ const Contact = () => {
               />
             </div>
 
-            <Button 
-              type="submit" 
-              variant="hero" 
-              size="lg" 
-              className="w-full"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Sending..." : "Send Message"}
-              <Send className="w-4 h-4 ml-2" />
+             <Button type="submit" variant="hero" size="lg" className="w-full">
+              Send Message
+            <Send className="w-4 h-4 ml-2" />
             </Button>
           </form>
 
