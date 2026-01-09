@@ -53,17 +53,42 @@ const Contact = () => {
     setIsSubmitting(true);
 
     // Construct mailto link with form data
-    const subject = encodeURIComponent(`Contact Form Submission from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\n` +
-      `Position: ${formData.position || "Not provided"}\n` +
-      `Company: ${formData.company || "Not provided"}\n` +
-      `Email: ${formData.email}\n\n` +
-      `Message:\n${formData.message}`
-    );
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
 
-    // Open mailto link
-    window.location.href = `mailto:compliance@sentinelcbs.com?subject=${subject}&body=${body}`;
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+          title: "Missing required fields",
+          description: "Please fill in all mandatory fields.",
+          variant: "destructive",
+          });
+    return;
+    }
+    setIsSubmitting(true);
+
+    try {
+    const formBody = new URLSearchParams({
+      "form-name": "contact",
+      ...formData,
+    }).toString();
+
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: formBody,
+    });
+
+    setIsSubmitted(true);
+  } catch (error) {
+    toast({
+      title: "Submission failed",
+      description: "Please try again later.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
     // Show success state after a brief delay
     setTimeout(() => {
@@ -124,7 +149,16 @@ const Contact = () => {
             Fill out the form below and we'll get back to you shortly.
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+         <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
+            className="space-y-6"
+          >    
+  <input type="hidden" name="form-name" value="contact" />
+  <input type="hidden" name="bot-field" />
             <div className="space-y-2">
               <Label htmlFor="name">
                 Name <span className="text-primary">*</span>
