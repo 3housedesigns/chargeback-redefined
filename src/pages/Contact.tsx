@@ -114,9 +114,8 @@ const Contact = () => {
               className="mx-auto w-24 h-auto mb-4"
             />
             <div className="flex flex-col items-center">
-              <span className="text-xl font-bold tracking-wider text-foreground">SENTINEL</span>
-              <span className="text-sm text-muted-foreground">chargeback</span>
-              <span className="text-sm text-muted-foreground">solutions</span>
+              <span className="font-bold tracking-wide text-3xl text-destructive">SENTINEL</span>
+              <span className="text-xs font-normal text-secondary-foreground">CHARGEBACK SOLUTIONS</span>
             </div>
           </div>
 
