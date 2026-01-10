@@ -19,6 +19,7 @@ const Contact = () => {
     message: "",
   });
 
+  // Handle form field changes
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -26,71 +27,75 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-    toast({
-      title: "Missing required fields",
-      description: "Please fill in all mandatory fields.",
-      variant: "destructive",
-    });
-    return;
-  }
-
-  // Email validation
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(formData.email)) {
-    toast({
-      title: "Invalid email",
-      description: "Please enter a valid email address.",
-      variant: "destructive",
-    });
-    return;
-  }
-
-  setIsSubmitting(true);
-
-  try {
-    // Convert form data to URL encoded string for Netlify
-    const formBody = new URLSearchParams({
-      "form-name": "contact",
-      ...formData,
-    }).toString();
-
-    await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: formBody,
-    });
-
-    // Show success state
-    setIsSubmitted(true);
-    setFormData({
-      name: "",
-      email: "",
-      position: "",
-      company: "",
-      message: "",
-    });
-  } catch (error) {
-    toast({
-      title: "Submission failed",
-      description: "Please try again later.",
-      variant: "destructive",
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
-};
-
-    // Show success state after a brief delay
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 500);
+   // Handle form field changes
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // --- Single handleSubmit function ---
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Validate required fields
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      toast({
+        title: "Missing required fields",
+        description: "Please fill in all mandatory fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Convert form data to URL encoded string for Netlify
+      const formBody = new URLSearchParams({
+        "form-name": "contact",
+        ...formData,
+      }).toString();
+
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formBody,
+      });
+
+      // Success: reset form and show thank-you page
+      setFormData({
+        name: "",
+        email: "",
+        position: "",
+        company: "",
+        message: "",
+      });
+      setIsSubmitted(true);
+    } catch (error) {
+      toast({
+        title: "Submission failed",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // --- Thank You page ---
   if (isSubmitted) {
     return (
       <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -118,6 +123,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     );
   }
 
+  // --- Contact Form ---
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden py-12">
       <div className="absolute inset-0 hero-glow" />
@@ -143,14 +149,14 @@ const handleSubmit = async (e: React.FormEvent) => {
             Fill out the form below and we'll get back to you shortly.
           </p>
 
-        <form
-  name="contact"
-  method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  onSubmit={handleSubmit} 
-  className="space-y-6"
->
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            onSubmit={handleSubmit} // <-- important
+            className="space-y-6"
+          >
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="bot-field" />
           
@@ -228,17 +234,17 @@ const handleSubmit = async (e: React.FormEvent) => {
               />
             </div>
 
-             <Button
-    type="submit"
-    variant="hero"
-    size="lg"
-    className="w-full"
-    disabled={isSubmitting}
-  >
-    {isSubmitting ? "Sending..." : "Send Message"}
-    <Send className="w-4 h-4 ml-2" />
-  </Button>
-</form>
+            <Button
+              type="submit"
+              variant="hero"
+              size="lg"
+              className="w-full"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+              <Send className="w-4 h-4 ml-2" />
+            </Button>
+          </form>
 
           <div className="mt-8 text-center">
             <Link to="/">
