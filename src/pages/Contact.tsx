@@ -19,7 +19,7 @@ const Contact = () => {
     message: "",
   });
 
-  // Handle form field changes
+  // Handle input changes
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -27,16 +27,8 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-   // Handle form field changes
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  // --- Single handleSubmit function ---
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Single, deploy-ready handleSubmit
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Validate required fields
@@ -63,7 +55,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Convert form data to URL encoded string for Netlify
+      // Prepare Netlify POST
       const formBody = new URLSearchParams({
         "form-name": "contact",
         ...formData,
@@ -75,12 +67,11 @@ const Contact = () => {
         body: formBody,
       });
 
-      // Success: reset form and show thank-you page
       setFormData({
         name: "",
-        email: "",
         position: "",
         company: "",
+        email: "",
         message: "",
       });
       setIsSubmitted(true);
@@ -101,7 +92,6 @@ const Contact = () => {
       <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 hero-glow" />
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
-        
         <div className="container relative z-10 px-4">
           <div className="glass-card max-w-lg mx-auto p-12 text-center">
             <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/20 flex items-center justify-center">
@@ -128,7 +118,6 @@ const Contact = () => {
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden py-12">
       <div className="absolute inset-0 hero-glow" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
-      
       <div className="container relative z-10 px-4">
         <div className="glass-card max-w-xl mx-auto p-8 md:p-12">
           {/* Logo Header */}
@@ -154,12 +143,12 @@ const Contact = () => {
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
-            onSubmit={handleSubmit} // <-- important
+            onSubmit={handleSubmit} // <-- this connects your form to the submit function
             className="space-y-6"
           >
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="bot-field" />
-          
+
             <div className="space-y-2">
               <Label htmlFor="name">
                 Name <span className="text-primary">*</span>
