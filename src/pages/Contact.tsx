@@ -26,47 +26,33 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Validate required fields
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      toast({
-        title: "Missing required fields",
-        description: "Please fill in all mandatory fields.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    // Construct mailto link with form data
-    const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault();
-
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-          title: "Missing required fields",
-          description: "Please fill in all mandatory fields.",
-          variant: "destructive",
-          });
+    toast({
+      title: "Missing required fields",
+      description: "Please fill in all mandatory fields.",
+      variant: "destructive",
+    });
     return;
-    }
-    setIsSubmitting(true);
+  }
 
-    try {
+  // Email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.email)) {
+    toast({
+      title: "Invalid email",
+      description: "Please enter a valid email address.",
+      variant: "destructive",
+    });
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  try {
+    // Convert form data to URL encoded string for Netlify
     const formBody = new URLSearchParams({
       "form-name": "contact",
       ...formData,
@@ -78,7 +64,15 @@ const Contact = () => {
       body: formBody,
     });
 
+    // Show success state
     setIsSubmitted(true);
+    setFormData({
+      name: "",
+      email: "",
+      position: "",
+      company: "",
+      message: "",
+    });
   } catch (error) {
     toast({
       title: "Submission failed",
@@ -149,15 +143,17 @@ const Contact = () => {
             Fill out the form below and we'll get back to you shortly.
           </p>
 
-         <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-              className="space-y-6"
-          >
+        <form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  onSubmit={handleSubmit} 
+  className="space-y-6"
+>
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="bot-field" />
+          
             <div className="space-y-2">
               <Label htmlFor="name">
                 Name <span className="text-primary">*</span>
@@ -232,11 +228,17 @@ const Contact = () => {
               />
             </div>
 
-             <Button type="submit" variant="hero" size="lg" className="w-full">
-              Send Message
-            <Send className="w-4 h-4 ml-2" />
-            </Button>
-          </form>
+             <Button
+    type="submit"
+    variant="hero"
+    size="lg"
+    className="w-full"
+    disabled={isSubmitting}
+  >
+    {isSubmitting ? "Sending..." : "Send Message"}
+    <Send className="w-4 h-4 ml-2" />
+  </Button>
+</form>
 
           <div className="mt-8 text-center">
             <Link to="/">
